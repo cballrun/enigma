@@ -9,9 +9,13 @@ describe Key do
     expect(@key).to be_a(Key)
   end
 
-  xit 'has 5 digits' do
-    expect(@key.length).to eq(5)
+  it 'can create a random 5 digit number as a string' do
+    expect(@key.keygen.length).to eq(5)
+    expect(@key.keygen.class).to eq(String)
   end
+
+
+
 
 
 
