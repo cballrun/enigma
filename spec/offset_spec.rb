@@ -30,10 +30,12 @@ describe Offset do
   end
 
   it 'can find the A offset' do
+    
     expect(@offset.a_offset).to eq(5)
   end
 
   it 'can find the B offset' do
+
     expect(@offset.b_offset).to eq(6)
   end
 

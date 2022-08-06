@@ -18,6 +18,24 @@ class Offset
     square.to_s[-4..-1]
   end
 
+  def a_offset
+    last_four_digits[0].to_i
+  end
+  
+  def b_offset
+    last_four_digits[1].to_i
+  end
+
+  def c_offset
+    last_four_digits[2].to_i
+  end
+
+  def d_offset
+    last_four_digits[3].to_i
+  end
+
+
+
 
 
 end
