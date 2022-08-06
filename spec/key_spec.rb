@@ -22,19 +22,19 @@ describe Key do
     expect(@key_1.keygen.class).to eq(String)
   end
 
-  xit 'has an a key' do
+  it 'can generate expected a key from a test key' do
     expect(@key.a_key).to eq(02)
   end
 
-  xit 'has an b key' do
+  it 'can generate expected b key from a test key' do
     expect(@key.b_key).to eq(27)
   end
 
-  xit 'has an c key' do
+  it 'can generate expected c key from a test key' do
     expect(@key.c_key).to eq(71)
   end
 
-  xit 'has an d key' do
+  it 'can generate expected d key from a test key' do
     expect(@key.d_key).to eq(15)
   end
 
