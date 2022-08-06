@@ -12,7 +12,7 @@
 #   end
 
 #   xit 'can make a shifts hash with the right values' do
-
+#     expect(@shift.shifts).to eq(A => )
 #   end
 
 

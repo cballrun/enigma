@@ -1,8 +1,8 @@
 class Offset
   attr_reader :date
 
-  def initialize
-    @date = Date.today
+  def initialize(date = Timecop.freeze(1995, 8, 4))
+    @date = date
   end
 
   def date_format
