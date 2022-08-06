@@ -1,8 +1,8 @@
 class Offset
   attr_reader :date
 
-  def initialize
-    @date = Date.today
+  def initialize(date)
+    @date = date
   end
 
   def date_format
