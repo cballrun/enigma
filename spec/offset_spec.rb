@@ -1,9 +1,12 @@
 require './offset'
 require 'date'
 
+
 describe Offset do
   before :each do
+    
     @offset = Offset.new
+    
   end
 
   it 'exists' do
@@ -11,6 +14,7 @@ describe Offset do
   end
 
   it 'has a date' do
+   
     expect(@offset.date).to be_a(Date)
   end
 
@@ -22,7 +26,7 @@ describe Offset do
   it 'can square the date and produce an integer' do
     
     expect(@offset.square).to be_a(Integer)
-    expect(@offset.square).to eq(2582875684)
+    expect(@offset.square).to eq(3699315684)
   end
 
   it 'can take the last four digits of a squared date' do
