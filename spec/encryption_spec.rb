@@ -7,7 +7,7 @@ describe Encryption do
     date = Timecop.freeze(1995, 8, 4)
     offset = Offset.new(date)
     @shift = Shift.new(key, offset)
-    @encryption = Encryption("hello world")
+    @encryption = Encryption.new("hello world")
   end
 
   it 'exists' do
