@@ -1,11 +1,13 @@
 require './key'
 require './offset'
 require './shift'
+require 'timecop'
 
 describe Shift do
   before :each do
-    key = Key.new("02175")
-    offset = Offset.new
+    key = Key.new("02715")
+    date = Timecop.freeze(1995, 8, 4)
+    offset = Offset.new(date)
     @shift = Shift.new(key, offset)
   end
 
@@ -18,13 +20,14 @@ describe Shift do
   end
 
   it 'has an offset' do
+    
     expect(@shift.offset).to be_a(Offset)
   end
 
   it 'can make a shifts hash with the right values' do
     expect(@shift.shifts).to be_a(Hash)
-    
-    expect(@shift.shifts).to eq({A => 3, B=> 27, C => 73, D => 20} )
+    require 'pry';binding.pry
+    expect(@shift.shifts).to eq({:A => 3, :B=> 27, :C => 73, :D => 20} )
   end
 
 
