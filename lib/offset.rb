@@ -1,7 +1,7 @@
 class Offset
   attr_reader :date
 
-  def initialize(date = Timecop.freeze(1995, 8, 4))
+  def initialize(date)
     @date = date
   end
 

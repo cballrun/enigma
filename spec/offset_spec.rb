@@ -5,12 +5,13 @@ require 'timecop'
 
 describe Offset do
   before :each do
-    
-    @offset = Offset.new
+    date = Timecop.freeze(1995, 8, 4)
+    @offset = Offset.new(date)
     
   end
 
   it 'exists' do
+
     expect(@offset).to be_a(Offset)
   end
 

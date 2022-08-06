@@ -16,6 +16,7 @@ describe Key do
   end
 
   it 'can create a random 5 digit number as a string' do #.format for leading zeroes/string padding? or ljust/rjust?
+   
     expect(@key.keygen.length).to eq(5)
     expect(@key.keygen.class).to eq(String)
     expect(@key_1.keygen.length).to eq(5)

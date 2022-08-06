@@ -4,7 +4,9 @@ require './shift'
 
 describe Shift do
   before :each do
-    @shift = Shift.new(Key.new("021715"), Offset.new)
+    key = Key.new("02175")
+    offset = Offset.new
+    @shift = Shift.new(key, offset)
   end
 
   it 'exists' do
@@ -21,7 +23,7 @@ describe Shift do
 
   it 'can make a shifts hash with the right values' do
     expect(@shift.shifts).to be_a(Hash)
-    require 'pry';binding.pry
+    
     expect(@shift.shifts).to eq({A => 3, B=> 27, C => 73, D => 20} )
   end
 
