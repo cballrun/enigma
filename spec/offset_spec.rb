@@ -25,6 +25,26 @@ describe Offset do
     expect(@offset.square).to eq(2582875684)
   end
 
+  it 'can take the last four digits of a squared date' do
+    expect(@offset.last_four_digits).to eq("5684")
+  end
+
+  it 'can find the A offset' do
+    expect(@offset.a_offset).to eq(5)
+  end
+
+  it 'can find the B offset' do
+    expect(@offset.b_offset).to eq(6)
+  end
+
+  it 'can find the C offset' do
+    expect(@offset.c_offset).to eq(8)
+  end
+
+  it 'can find the D offset' do
+    expect(@offset.d_offset).to eq(4)
+  end
+
 
 
 

@@ -14,6 +14,10 @@ class Offset
     int_date * int_date
   end
 
+  def last_four_digits
+    square.to_s[-4..-1]
+  end
+
 
 
 end
