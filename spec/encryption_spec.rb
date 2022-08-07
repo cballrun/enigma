@@ -59,14 +59,37 @@ describe Encryption do
   it 'can encrypt a one letter message with the a shift' do
     @encryption_test = Encryption.new("h", @shift)
     
-    expect(@encryption_test.encrypt_letter).to eq("k")
+    expect(@encryption_test.encrypt_letter_a).to eq("k")
+  end
+  
+  it 'can encrypt a one letter message with the b shift' do
+    @encryption_test = Encryption.new("e", @shift)
+    
+    expect(@encryption_test.encrypt_letter_b).to eq("e")
   end
 
   it 'can encrypt a one letter message with the c shift' do
     @encryption_test = Encryption.new("l", @shift)
     
-    expect(@encryption_test.encrypt_letter_2).to eq("d")
+    expect(@encryption_test.encrypt_letter_c).to eq("d")
   end
+
+  it 'can encrypt a one letter message with the d shift' do
+    @encryption_test = Encryption.new("l", @shift)
+    
+    expect(@encryption_test.encrypt_letter_d).to eq("e")
+  end
+
+
+  it 'can split a message into an array of characters' do
+    expect(@encryption.message_split).to eq(["h", "e", "l", "l", "o", "w", "o", "r", "l", "d"])
+  end
+
+  xit 'can encrypt a message' do
+    require 'pry';binding.pry
+    expect(@encryption.encrypt_message).to eq("keder ohulw")
+  end
+
 
 
 
