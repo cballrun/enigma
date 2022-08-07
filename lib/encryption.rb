@@ -1,7 +1,9 @@
 require './alphabetable'
+require './splitable'
 
 class Encryption
   include Alphabetable
+  include Splitable
 
   attr_reader :message,
               :shift
@@ -37,14 +39,6 @@ class Encryption
     shift_1 = shift.shifts[:D]
     rotate_amount = position + shift_1
     new_letter = alphabet.rotate(rotate_amount).first
-  end
-
-  def message_split
-    message.chars
-  end
-
-  def chars_split
-    message_split.each_slice(4).to_a
   end
 
   def encrypt_message

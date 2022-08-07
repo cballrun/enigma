@@ -1,7 +1,9 @@
 require './alphabetable'
+require './splitable'
 
 class Decryption
   include Alphabetable
+  include Splitable
 
   attr_reader :message,
               :shift
@@ -39,13 +41,6 @@ class Decryption
     new_letter = alphabet.rotate(rotate_amount).first
   end
 
-  def message_split #module?
-    message.chars
-  end
-
-  def chars_split #module?
-    message_split.each_slice(4).to_a
-  end
 
   def decrypt_message
     decrypted_message = ""
