@@ -55,25 +55,40 @@ class Encryption
     message_split.each_slice(4).to_a
   end
 
-  def chars_encrypt
+  def encrypt_message
+    encrypted_message = ""
     chars_split.map do|chars|
-      chars.each_with_index do |char|
-        if chars[0] == char
+      chars.each_with_index do |char, index|
+        if index == 0
           encrypted_message << encrypt_letter_a(char)
-        elsif chars[1] == char
+        elsif index == 1
           encrypted_message << encrypt_letter_b(char)
-        elsif chars[2] == char
+        elsif index == 2
           encrypted_message << encrypt_letter_c(char)
-        elsif chars[3] == char
-          
+        elsif index == 3
           encrypted_message << encrypt_letter_d(char)
-        
         end
-        
       end
-      encrypted_message
     end
+    encrypted_message
   end
+  
+        # if chars[0] == char
+        #   encrypted_message << encrypt_letter_a(char)
+        # elsif chars[1] == char
+        #   encrypted_message << encrypt_letter_b(char)
+        # elsif chars[2] == char
+        #   encrypted_message << encrypt_letter_c(char)
+        # elsif chars[3] == char
+          
+        #   encrypted_message << encrypt_letter_d(char)
+        
+        # end
+        
+   
+      
+
+ 
 
 
   def chars_index

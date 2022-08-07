@@ -91,7 +91,7 @@ describe Encryption do
     expect(@encryption.chars_split).to eq([["h", "e", "l", "l"], ["o", " ", "w", "o"], ["r", "l", "d"]])
   end
 
-  it 'can enrypt the characters in the sub arraay' do
+  xit 'can enrypt the characters in the sub arraay' do
     
     expect(@encryption.chars_encrypt).to eq([["k", "e", "d", "e"], ["r", " ", "o", "h"], ["u", "l", "w"]])
   end
@@ -109,8 +109,8 @@ describe Encryption do
     expect(@encryption.encrypt_characters).to eq(["k", "r", "o", "e", "w", "d", "d", "g", "e", "k"])
   end
 
-  xit 'can encrypt a message' do
-    require 'pry';binding.pry
+  it 'can encrypt a message' do
+    
     expect(@encryption.encrypt_message).to eq("keder ohulw")
   end
 
