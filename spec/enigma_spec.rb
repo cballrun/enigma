@@ -38,12 +38,13 @@ describe Enigma do
   end
 
   it 'can encrypt a message with a key and todays date' do
+    
     encrypted = @enigma.encrypt("hello world", "02715")
     
     expect(encrypted).to eq(
     {
            
-      encryption: "keder ohulw",
+      encryption: "okjdvfugyrb",
       key: "02715",
       date: "070822"
          
@@ -70,8 +71,8 @@ describe Enigma do
     expect(encrypted).to eq(
     {
            
-      encryption: "keder ohulw",
-      key: "02715",
+      encryption: "",
+      key: "",
       date: "070822"
          
     }
