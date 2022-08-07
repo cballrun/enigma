@@ -1,8 +1,10 @@
 class Encryption
-  attr_reader :message
+  attr_reader :message,
+              :shift
 
-  def initialize(message)
+  def initialize(message, shift)
     @message = message
+    @shift = shift
   end
 
   def alphabet
@@ -10,7 +12,6 @@ class Encryption
   end
 
   def alphabet_with_index
-    require 'pry';binding.pry
     index_hash = Hash.new(0)
     alphabet.each_with_index do |letter, index|
       index_hash["#{letter}"] = "#{index}".to_i
@@ -18,7 +19,11 @@ class Encryption
     index_hash
   end
   
+  def encrypt_letter
+    position = alphabet_with_index[message]
+    shift_1 = shift.shifts[:A]
 
+  end
 
 
 end

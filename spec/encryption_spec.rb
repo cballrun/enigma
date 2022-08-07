@@ -7,7 +7,7 @@ describe Encryption do
     @date = Timecop.freeze(1995, 8, 4)
     @offset = Offset.new(@date)
     @shift = Shift.new(@key, @offset)
-    @encryption = Encryption.new("hello world")
+    @encryption = Encryption.new("hello world", @shift)
   end
 
   it 'exists' do
@@ -18,12 +18,15 @@ describe Encryption do
     expect(@encryption.message).to eq("hello world")
   end
 
+  it 'has a shift' do
+    expect(@encryption.shift).to be_a(Shift)
+  end
+
   it 'has an alphabet' do
     expect(@encryption.alphabet). to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
   end
 
   it 'can index the alphabet' do
-    require 'pry';binding.pry
     expect(@encryption.alphabet_with_index).to eq({"a" => 0,
       "b" => 1,
       "c" => 2,
@@ -53,10 +56,10 @@ describe Encryption do
       " " => 26})
   end
 
-  it 'can encrypt a one letter message' do
-    @encryption_test = Encryption.new("h")
-
-    expect(@encryption_test.encrypt_message).to eq("k")
+  xit 'can encrypt a one letter message' do
+    @encryption_test = Encryption.new("h", @shift)
+    require 'pry';binding.pry
+    expect(@encryption_test.encrypt_letter).to eq("k")
   end
 
 
