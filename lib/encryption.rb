@@ -19,29 +19,29 @@ class Encryption
     index_hash
   end
   
-  def encrypt_letter_a
-    position = alphabet_with_index[message]
+  def encrypt_letter_a(letter)
+    position = alphabet_with_index[letter]
     shift_1 = shift.shifts[:A]
     rotate_amount = position + shift_1
     new_letter = alphabet.rotate(rotate_amount).first
   end
 
-  def encrypt_letter_b
-    position = alphabet_with_index[message]
+  def encrypt_letter_b(letter)
+    position = alphabet_with_index[letter]
     shift_1 = shift.shifts[:B]
     rotate_amount = position + shift_1
     new_letter = alphabet.rotate(rotate_amount).first
   end
 
-  def encrypt_letter_c
-    position = alphabet_with_index[message]
+  def encrypt_letter_c(letter)
+    position = alphabet_with_index[letter]
     shift_1 = shift.shifts[:C]
     rotate_amount = position + shift_1
     new_letter = alphabet.rotate(rotate_amount).first
   end
 
-  def encrypt_letter_d
-    position = alphabet_with_index[message]
+  def encrypt_letter_d(letter)
+    position = alphabet_with_index[letter]
     shift_1 = shift.shifts[:D]
     rotate_amount = position + shift_1
     new_letter = alphabet.rotate(rotate_amount).first
@@ -59,13 +59,26 @@ class Encryption
     chars_index_hash = Hash.new([])
     chars_split.map do |chars|
       chars.each_with_index do |letter, index|
-        chars_index_hash["#{index}"] += ["#{letter}"]
+        chars_index_hash["#{index}".to_i] += ["#{letter}"]
       end
     end
     chars_index_hash
   end
 
   def encrypt_message
+    chars_index[0].flat_map do |chars|
+      chars.encrypt_letter_a
+    end
+    chars_index[1].flat_map do |chars|
+      chars.encrypt_letter_b
+    end
+    chars_index[2].flat_map do |chars|
+      chars.encrypt_letter_c
+    end
+    chars_index[3].flat_map do |chars|
+      chars.encrypt_letter_d
+    end
+
 
   end
 

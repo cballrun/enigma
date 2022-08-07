@@ -57,27 +57,24 @@ describe Encryption do
   end
 
   it 'can encrypt a one letter message with the a shift' do
-    @encryption_test = Encryption.new("h", @shift)
     
-    expect(@encryption_test.encrypt_letter_a).to eq("k")
+    expect(@encryption.encrypt_letter_a("h")).to eq("k")
   end
   
   it 'can encrypt a one letter message with the b shift' do
-    @encryption_test = Encryption.new("e", @shift)
     
-    expect(@encryption_test.encrypt_letter_b).to eq("e")
+    expect(@encryption.encrypt_letter_b("e")).to eq("e")
   end
 
   it 'can encrypt a one letter message with the c shift' do
-    @encryption_test = Encryption.new("l", @shift)
     
-    expect(@encryption_test.encrypt_letter_c).to eq("d")
+    expect(@encryption.encrypt_letter_c("l")).to eq("d")
   end
 
   it 'can encrypt a one letter message with the d shift' do
-    @encryption_test = Encryption.new("l", @shift)
+   
     
-    expect(@encryption_test.encrypt_letter_d).to eq("e")
+    expect(@encryption.encrypt_letter_d("l")).to eq("e")
   end
 
 
@@ -90,16 +87,16 @@ describe Encryption do
     expect(@encryption.chars_split).to eq([["h", "e", "l", "l"], ["o", "w", "o", "r"], ["l", "d"]])
   end
 
-  it 'can index the sub arrays 0..4' do
+  it 'can index the sub arrays 0..3' do
     
     expect(@encryption.chars_index).to be_a(Hash)
-    expect(@encryption.chars_index).to eq({"0"=>["h", "o", "l"], "1"=>["e", "w", "d"], "2"=>["l", "o"], "3"=>["l", "r"]})
+    expect(@encryption.chars_index).to eq({0 =>["h", "o", "l"], 1 =>["e", "w", "d"], 2 =>["l", "o"], 3 =>["l", "r"]})
   end
 
 
   
   xit 'can encrypt a message' do
-    require 'pry';binding.pry
+    
     expect(@encryption.encrypt_message).to eq("keder ohulw")
   end
 
