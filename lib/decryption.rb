@@ -39,6 +39,31 @@ class Decryption
     new_letter = alphabet.rotate(rotate_amount).first
   end
 
+  def message_split #module?
+    message.chars
+  end
+
+  def chars_split #module?
+    message_split.each_slice(4).to_a
+  end
+
+  def decrypt_message
+    decrypted_message = ""
+    chars_split.map do|chars|
+      chars.each_with_index do |char, index|
+        if index == 0
+          decrypted_message << decrypt_letter_a(char)
+        elsif index == 1
+          decrypted_message << decrypt_letter_b(char)
+        elsif index == 2
+          decrypted_message << decrypt_letter_c(char)
+        elsif index == 3
+          decrypted_message << decrypt_letter_d(char)
+        end
+      end
+    end
+    decrypted_message
+  end
 
 
 

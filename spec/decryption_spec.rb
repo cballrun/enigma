@@ -72,17 +72,17 @@ describe Decryption do
    expect(@decryption.decrypt_letter_d("e")).to eq("l")
   end
 
-  xit 'can split a message into an array of characters' do
+  it 'can split a message into an array of characters' do
     expect(@decryption.message_split).to eq(["k", "e", "d", "e", "r", " ", "o", "h", "u", "l", "w"])
   end
 
-  xit 'can split a message array into sub arrays' do
+  it 'can split a message array into sub arrays' do
     expect(@decryption.chars_split).to be_a(Array)
     expect(@decryption.chars_split).to eq([["k", "e", "d", "e"], ["r", " ", "o", "h"], ["u", "l", "w"]])
   end
 
 
-  xit 'can decrypt a message' do
+  it 'can decrypt a message' do
     expect(@decryption.decrypt_message).to eq("hello world")
   end
 end
