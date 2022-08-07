@@ -56,19 +56,19 @@ describe Decryption do
       " " => 26})
   end
 
-  xit 'can decrypt a one letter message with the a shift' do
+  it 'can decrypt a one letter message with the a shift' do
     expect(@decryption.decrypt_letter_a("k")).to eq("h")
   end
   
-  xit 'can decrypt a one letter message with the b shift' do
+  it 'can decrypt a one letter message with the b shift' do
     expect(@decryption.decrypt_letter_b("e")).to eq("e")
   end
 
-  xit 'can decrypt a one letter message with the c shift' do
+  it 'can decrypt a one letter message with the c shift' do
     expect(@decryption.decrypt_letter_c("d")).to eq("l")
   end
 
-  xit 'can decrypt a one letter message with the d shift' do
+  it 'can decrypt a one letter message with the d shift' do
    expect(@decryption.decrypt_letter_d("e")).to eq("l")
   end
 
