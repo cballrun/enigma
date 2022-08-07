@@ -10,8 +10,13 @@ class Offset
   end
 
   def square
-    int_date = date_format.to_i
-    int_date * int_date
+    if date.class == String
+      int_date = date.to_i
+      int_date * int_date
+    else 
+      int_date = date_format.to_i
+      int_date * int_date
+    end
   end
 
   def last_four_digits

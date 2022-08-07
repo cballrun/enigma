@@ -9,7 +9,6 @@ describe Enigma do
     @key = Key.new("02715")
     @date = Timecop.freeze(1995, 8, 4)
     @offset = Offset.new(@date)
-    require 'pry';binding.pry
     @shift = Shift.new(@key, @offset)
     @encryption = Encryption.new("hello world", @shift)
     @decryption = Decryption.new("keder ohulw", @shift)
