@@ -65,21 +65,33 @@ class Encryption
     chars_index_hash
   end
 
+  def encrypt_characters
+    a_chars = chars_index[0].flat_map do |char|
+      encrypt_letter_a(char)
+    end
+
+    b_chars = chars_index[1].flat_map do |char|
+      encrypt_letter_b(char)
+    end
+    c_chars = chars_index[2].flat_map do |char|
+      encrypt_letter_c(char)
+    end
+    d_chars = chars_index[3].flat_map do |char|
+      encrypt_letter_d(char)
+    end
+    
+    require 'pry';binding.pry
+  end
+
   def encrypt_message
-    chars_index[0].flat_map do |chars|
-      chars.encrypt_letter_a
-    end
-    chars_index[1].flat_map do |chars|
-      chars.encrypt_letter_b
-    end
-    chars_index[2].flat_map do |chars|
-      chars.encrypt_letter_c
-    end
-    chars_index[3].flat_map do |chars|
-      chars.encrypt_letter_d
-    end
-
-
+    encrypted_char_array = encrypt_characters
+    
+    encrypted_message = ""
+    encrypted_char_array.each do |char|
+      encrypted_message << encrypted_char_array[0] 
+      encrypted_char_array.rotate!(3)
+   end
+   encrypted_message
   end
 
 

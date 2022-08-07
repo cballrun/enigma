@@ -95,8 +95,13 @@ describe Encryption do
 
 
   
+  xit 'can encrypt the characters of a message' do
+    expect(@encryption.encrypt_characters).to be_a(Array)
+    expect(@encryption.encrypt_characters).to eq(["k", "r", "o", "e", "w", "d", "d", "g", "e", "k"])
+  end
+
   xit 'can encrypt a message' do
-    
+    require 'pry';binding.pry
     expect(@encryption.encrypt_message).to eq("keder ohulw")
   end
 
