@@ -6,12 +6,14 @@ class Enigma
   end
 
   def encrypt(message, key = nil, date = nil)
-    key = Key.new(key)
+    use_key = Key.new(key)
     offset = Offset.new(date)
-    shift = Shift.new(key, offset) 
+    shift = Shift.new(use_key, offset) 
     encryption = Encryption.new(message, shift)
     encryption_hash = Hash.new
     encryption_hash[:encryption] = encryption.encrypt_message
-    require 'pry';binding.pry
+    encryption_hash[:key] = key
+    encryption_hash[:date] = date
+    encryption_hash
   end
 end
