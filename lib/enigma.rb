@@ -1,5 +1,3 @@
-require 'date'
-
 class Enigma
   
 
@@ -17,7 +15,6 @@ class Enigma
     encryption_hash[:encryption] = encryption.encrypt_message
     encryption_hash[:key] = key
     if date.class == String
-      
       encryption_hash[:date] = date
     else
       encryption_hash[:date] = offset.date_format
