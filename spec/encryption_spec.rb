@@ -56,11 +56,19 @@ describe Encryption do
       " " => 26})
   end
 
-  it 'can encrypt a one letter message' do
+  it 'can encrypt a one letter message with the a shift' do
     @encryption_test = Encryption.new("h", @shift)
     
     expect(@encryption_test.encrypt_letter).to eq("k")
   end
+
+  it 'can encrypt a one letter message with the c shift' do
+    @encryption_test = Encryption.new("l", @shift)
+    
+    expect(@encryption_test.encrypt_letter_2).to eq("d")
+  end
+
+
 
 
 
