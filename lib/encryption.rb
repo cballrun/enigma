@@ -1,4 +1,8 @@
+require './alphabetable'
+
 class Encryption
+  include Alphabetable
+
   attr_reader :message,
               :shift
 
@@ -7,18 +11,6 @@ class Encryption
     @shift = shift
   end
 
-  def alphabet
-    ("a".."z").to_a << " "  
-  end
-
-  def alphabet_with_index
-    index_hash = Hash.new(0)
-    alphabet.each_with_index do |letter, index|
-      index_hash["#{letter}"] = "#{index}".to_i
-    end
-    index_hash
-  end
-  
   def encrypt_letter_a(letter)
     position = alphabet_with_index[letter]
     shift_1 = shift.shifts[:A]
