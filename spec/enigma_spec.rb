@@ -1,17 +1,10 @@
 require './enigma'
-require './shift'
-require './key'
 require './encryption'
 require './decryption'
 
+
 describe Enigma do
   before :each do
-    @key = Key.new("02715")
-    @date = Timecop.freeze(1995, 8, 4)
-    @offset = Offset.new(@date)
-    @shift = Shift.new(@key, @offset)
-    @encryption = Encryption.new("hello world", @shift)
-    @decryption = Decryption.new("keder ohulw", @shift)
     @enigma = Enigma.new
   end
 
@@ -43,8 +36,10 @@ describe Enigma do
     })
   end
 
-  xit 'can encrypt a message with a key and todays date' do
+  it 'can encrypt a message with a key and todays date' do
+    
     encrypted = @enigma.encrypt("hello world", "02715")
+    
     expect(encrypted).to eq(
     {
            

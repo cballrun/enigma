@@ -1,3 +1,5 @@
+require 'date'
+
 class Enigma
   
 
@@ -5,7 +7,8 @@ class Enigma
 
   end
 
-  def encrypt(message, key = nil, date = nil)
+
+  def encrypt(message, key = nil, date = Date.today)
     use_key = Key.new(key)
     offset = Offset.new(date)
     shift = Shift.new(use_key, offset) 
@@ -13,7 +16,14 @@ class Enigma
     encryption_hash = Hash.new
     encryption_hash[:encryption] = encryption.encrypt_message
     encryption_hash[:key] = key
-    encryption_hash[:date] = date
+    if date.class == String
+      
+      encryption_hash[:date] = date
+    else
+      encryption_hash[:date] = offset.date_format
+    end
     encryption_hash
   end
+
+
 end
