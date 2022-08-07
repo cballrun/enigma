@@ -56,9 +56,9 @@ describe Encryption do
       " " => 26})
   end
 
-  xit 'can encrypt a one letter message' do
+  it 'can encrypt a one letter message' do
     @encryption_test = Encryption.new("h", @shift)
-    require 'pry';binding.pry
+    
     expect(@encryption_test.encrypt_letter).to eq("k")
   end
 

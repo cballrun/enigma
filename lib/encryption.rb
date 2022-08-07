@@ -22,7 +22,8 @@ class Encryption
   def encrypt_letter
     position = alphabet_with_index[message]
     shift_1 = shift.shifts[:A]
-
+    new_position = position + shift_1
+    new_letter = alphabet_with_index.key(new_position)
   end
 
 
