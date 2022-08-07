@@ -3,10 +3,10 @@ require './shift'
 
 describe Encryption do
   before :each do
-    key = Key.new("02715")
-    date = Timecop.freeze(1995, 8, 4)
-    offset = Offset.new(date)
-    @shift = Shift.new(key, offset)
+    @key = Key.new("02715")
+    @date = Timecop.freeze(1995, 8, 4)
+    @offset = Offset.new(@date)
+    @shift = Shift.new(@key, @offset)
     @encryption = Encryption.new("hello world")
   end
 
@@ -23,7 +23,7 @@ describe Encryption do
   end
 
   it 'can index the alphabet' do
-    
+    require 'pry';binding.pry
     expect(@encryption.alphabet_with_index).to eq({"a" => 0,
       "b" => 1,
       "c" => 2,
@@ -51,6 +51,12 @@ describe Encryption do
       'y' => 24,
       'z' => 25,
       " " => 26})
+  end
+
+  it 'can encrypt a one letter message' do
+    @encryption_test = Encryption.new("h")
+
+    expect(@encryption_test.encrypt_message).to eq("k")
   end
 
 
