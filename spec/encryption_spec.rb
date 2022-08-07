@@ -85,6 +85,19 @@ describe Encryption do
     expect(@encryption.message_split).to eq(["h", "e", "l", "l", "o", "w", "o", "r", "l", "d"])
   end
 
+  it 'can split a message array into sub arrays' do
+    expect(@encryption.chars_split).to be_a(Array)
+    expect(@encryption.chars_split).to eq([["h", "e", "l", "l"], ["o", "w", "o", "r"], ["l", "d"]])
+  end
+
+  it 'can index the sub arrays 0..4' do
+    
+    expect(@encryption.chars_index).to be_a(Hash)
+    expect(@encryption.chars_index).to eq({"0"=>["h", "o", "l"], "1"=>["e", "w", "d"], "2"=>["l", "o"], "3"=>["l", "r"]})
+  end
+
+
+  
   xit 'can encrypt a message' do
     require 'pry';binding.pry
     expect(@encryption.encrypt_message).to eq("keder ohulw")

@@ -51,5 +51,24 @@ class Encryption
     message.scan /\w/
   end
 
+  def chars_split
+    message_split.each_slice(4).to_a
+  end
+
+  def chars_index
+    chars_index_hash = Hash.new([])
+    chars_split.map do |chars|
+      chars.each_with_index do |letter, index|
+        chars_index_hash["#{index}"] += ["#{letter}"]
+      end
+    end
+    chars_index_hash
+  end
+
+  def encrypt_message
+
+  end
+
+
 
 end
