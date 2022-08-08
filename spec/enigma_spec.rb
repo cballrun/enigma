@@ -69,13 +69,14 @@ describe Enigma do
 
   xit 'can encrypt a message with a random key and todays date' do #not done
     encrypted = @enigma.encrypt("hello world")
+   
     expect(encrypted).to eq(
     {
            
       encryption: "",
       key: "",
       date: "070822"
-         
+    
     }
     )
   end
