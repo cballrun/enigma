@@ -4,8 +4,8 @@ require './shift'
 describe Encryption do
   before :each do
     @key = Key.new("02715")
-    @date = Timecop.freeze(1995, 8, 4)
-    @offset = Offset.new(@date)
+    @test_date = Timecop.travel(1995, 8, 4)
+    @offset = Offset.new(@test_date)
     @shift = Shift.new(@key, @offset)
     @encryption = Encryption.new("hello world", @shift)
   end
@@ -23,7 +23,6 @@ describe Encryption do
   end
 
   it 'has an alphabet' do
-    
     expect(@encryption.alphabet). to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
   end
 

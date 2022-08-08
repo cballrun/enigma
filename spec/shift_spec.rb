@@ -6,8 +6,8 @@ require 'timecop'
 describe Shift do
   before :each do
     key = Key.new("02715")
-    date = Timecop.freeze(1995, 8, 4)
-    offset = Offset.new(date)
+    test_date = Timecop.travel(1995, 8, 4)
+    offset = Offset.new(test_date)
     @shift = Shift.new(key, offset)
   end
 

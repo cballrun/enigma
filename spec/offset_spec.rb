@@ -5,8 +5,8 @@ require 'timecop'
 
 describe Offset do
   before :each do
-    date = Timecop.freeze(1995, 8, 4)
-    @offset = Offset.new(date)
+    test_date = Timecop.travel(1995, 8, 4)
+    @offset = Offset.new(test_date)
     
   end
 
