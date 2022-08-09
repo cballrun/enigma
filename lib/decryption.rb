@@ -1,5 +1,5 @@
-require './alphabetable'
-require './splitable'
+require './lib/alphabetable'
+require './lib/splitable'
 
 class Decryption
   include Alphabetable
