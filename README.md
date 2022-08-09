@@ -24,7 +24,7 @@
 
 ## Version Control: 4
 
-* Lots of commits with small chunks of functionality in each
+* Lots of commits with small chunks of code
 * Branches for each piece of functionality and secondary branches if refactoring aspects of functionality
 * Pull requests upon completion of functionality chunks
 
