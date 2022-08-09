@@ -1,9 +1,9 @@
 class Key
   
-  attr_reader :test_key
+  attr_reader :key
 
-  def initialize(test_key = nil)
-    @test_key = test_key
+  def initialize(key = nil)
+    @key = key
   end
 
   def keygen
@@ -12,23 +12,18 @@ class Key
   end
 
   def a_key
-    test_key[0..1].to_i
+    key[0..1].to_i
   end
 
   def b_key
-    test_key[1..2].to_i
+    key[1..2].to_i
   end
 
   def c_key
-    test_key[2..3].to_i
+    key[2..3].to_i
   end
 
   def d_key
-    test_key[3..4].to_i
+    key[3..4].to_i
   end
-
-
-
-
-
 end

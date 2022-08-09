@@ -13,7 +13,6 @@ describe Enigma do
     expect(@enigma).to be_a(Enigma)
   end
 
-
   it 'can encrypt a message with a key and given date' do
     expect(@enigma.encrypt("hello world", "02715", "040895")).to eq(
       {
@@ -23,7 +22,7 @@ describe Enigma do
       })
   end
 
-  it 'can decrypt a message with a key and given date' do
+  it 'can decrypt a message with a given key and given date' do
     expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eq(
       {
         decryption: "hello world",
@@ -32,13 +31,13 @@ describe Enigma do
       })
   end
 
-  it 'can encrypt a message with a key and todays date' do
+  it 'can encrypt a message with a given key and todays date' do
     encrypted = @enigma.encrypt("hello world", "02715")
     expect(encrypted).to eq(
       {
         encryption: "okjdvfugyrb",
         key: "02715",
-        date: "080822"
+        date: "090822"
       })
   end
 
@@ -48,22 +47,15 @@ describe Enigma do
       {
         decryption: "hello world",
         key: "02715",
-        date: "080822"
+        date: "090822"
       })
   end
 
-  xit 'can encrypt a message with a random key and todays date' do #not done
+  it 'can encrypt a message with a random key and todays date' do 
     encrypted = @enigma.encrypt("hello world")
-   
-    expect(encrypted).to eq(
-    {
-           
-      encryption: "",
-      key: "",
-      date: "070822"
-    
-    }
-    )
+    expect(encrypted[:date]).to eq("090822")
+    expect(encrypted[:encryption].length).to eq(11)
+    expect(encrypted[:key].length).to eq(5)
   end
 
 

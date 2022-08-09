@@ -8,6 +8,7 @@ describe Decryption do
     offset = Offset.new(test_date)
     shift = Shift.new(key, offset)
     @decryption = Decryption.new("keder ohulw", shift)
+    @decryption_2 = Decryption.new("!hxeoosprrdx!", shift)
   end
 
   it 'exists' do
@@ -74,5 +75,6 @@ describe Decryption do
 
   it 'can decrypt a message' do
     expect(@decryption.decrypt_message).to eq("hello world")
+    expect(@decryption_2.decrypt_message).to eq("!hello world!")
   end
 end

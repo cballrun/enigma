@@ -38,9 +38,4 @@ class Offset
   def d_offset
     last_four_digits[3].to_i
   end
-
-
-
-
-
 end

@@ -61,9 +61,4 @@ class Decryption
     end
     decrypted_message
   end
-
-
-
-
-
 end

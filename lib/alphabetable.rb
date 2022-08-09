@@ -1,4 +1,5 @@
 module Alphabetable
+  
   def alphabet
     ("a".."z").to_a << " "  
   end
@@ -10,5 +11,4 @@ module Alphabetable
     end
     index_hash
   end
-
 end

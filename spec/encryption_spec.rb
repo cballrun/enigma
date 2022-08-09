@@ -8,6 +8,7 @@ describe Encryption do
     offset = Offset.new(test_date)
     shift = Shift.new(key, offset)
     @encryption = Encryption.new("hello world", shift)
+    @encryption_2 = Encryption.new("!HeLlO wOrLd!", shift)
   end
 
   it 'exists' do
@@ -65,14 +66,17 @@ describe Encryption do
 
   it 'can split a message into an array of characters' do
     expect(@encryption.message_split).to eq(["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"])
+    expect(@encryption_2.message_split).to eq(["!", "H", "e", "L", "l", "O", " ", "w", "O", "r", "L", "d", "!"])
   end
 
   it 'can split a message array into sub arrays' do
     expect(@encryption.chars_split).to be_a(Array)
     expect(@encryption.chars_split).to eq([["h", "e", "l", "l"], ["o", " ", "w", "o"], ["r", "l", "d"]])
+    expect(@encryption_2.chars_split).to eq([["!", "H", "e", "L"], ["l", "O", " ", "w"], ["O", "r", "L", "d"], ["!"]])
   end
 
-  it 'can encrypt a message' do
+  it 'can encrypt a message containing characters not in the alphabet index' do
     expect(@encryption.encrypt_message).to eq("keder ohulw")
+    expect(@encryption_2.encrypt_message).to eq("!hxeoosprrdx!")
   end
 end

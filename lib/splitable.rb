@@ -7,5 +7,4 @@ module Splitable
   def chars_split
     message_split.each_slice(4).to_a
   end
-
 end

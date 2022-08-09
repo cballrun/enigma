@@ -12,7 +12,7 @@ describe Key do
   end
 
   it 'can initialize with a predefined test key' do
-    expect(@key.test_key).to eq("02715")
+    expect(@key.key).to eq("02715")
   end
 
   it 'can create a random 5 digit number as a string' do 
