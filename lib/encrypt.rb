@@ -6,12 +6,13 @@ require './lib/encryption'
 
 class Encrypt
   
-  message = File.open("message.txt").read
+  message = File.open(ARGV[0]).read
   enigma = Enigma.new
   encrypted_message = enigma.encrypt(message)
   
-  File.write(("encrypted.txt"), encrypted_message[:encryption])
 
-  puts "Created encrypted.txt with the key #{encrypted_message[:key]} and the date #{encrypted_message[:date]}"
+  File.write((ARGV[0]), encrypted_message[:encryption])
+
+  puts "Created #{ARGV[1]} with the key #{encrypted_message[:key]} and the date #{encrypted_message[:date]}"
 
 end
