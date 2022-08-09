@@ -1,5 +1,4 @@
 class Key
-  
   attr_reader :key
 
   def initialize(key = nil)

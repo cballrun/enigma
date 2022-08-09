@@ -58,10 +58,10 @@ describe Encryption do
   end
 
   it 'can encrypt a letter with each shift' do
-    expect(@encryption.encrypt_letter_a("h")).to eq("k")
-    expect(@encryption.encrypt_letter_b("e")).to eq("e")
-    expect(@encryption.encrypt_letter_c("l")).to eq("d")
-    expect(@encryption.encrypt_letter_d("l")).to eq("e")
+    expect(@encryption.encrypt_letter(:A, "h")).to eq("k")
+    expect(@encryption.encrypt_letter(:B, "e")).to eq("e")
+    expect(@encryption.encrypt_letter(:C, "l")).to eq("d")
+    expect(@encryption.encrypt_letter(:D, "l")).to eq("e")
   end
 
   it 'can split a message into an array of characters' do
