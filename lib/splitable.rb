@@ -1,5 +1,4 @@
 module Splitable
-
   def message_split
     message.chars
   end

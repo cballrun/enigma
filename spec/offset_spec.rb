@@ -1,7 +1,6 @@
 require './offset'
 require 'timecop'
 
-
 describe Offset do
   before :each do
     test_date = Timecop.travel(1995, 8, 4)

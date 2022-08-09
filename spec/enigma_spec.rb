@@ -1,7 +1,7 @@
 require './enigma'
 require './encryption'
 require './decryption'
-
+require 'timecop'
 
 describe Enigma do
   before :each do
@@ -57,7 +57,4 @@ describe Enigma do
     expect(encrypted[:encryption].length).to eq(11)
     expect(encrypted[:key].length).to eq(5)
   end
-
-
 end
-

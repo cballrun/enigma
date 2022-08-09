@@ -27,15 +27,4 @@ describe Shift do
     expect(@shift.shifts).to be_a(Hash)
     expect(@shift.shifts).to eq({:A => 3, :B=> 27, :C => 73, :D => 20} )
   end
-
-
-
-
-
-
-
-
-
-
-
 end

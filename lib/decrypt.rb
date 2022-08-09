@@ -4,12 +4,10 @@ require './lib/offset'
 require './lib/shift'
 require './lib/decryption'
 
-class Decrypt
-  message = File.open(ARGV[0]).read
-  enigma = Enigma.new
-  decrypted_message_hash = enigma.decrypt(message, ARGV[2], ARGV[3])
+message = File.open(ARGV[0]).read
+enigma = Enigma.new
+decrypted_message_hash = enigma.decrypt(message, ARGV[2], ARGV[3])
   
-  File.write((ARGV[1]), decrypted_message_hash[:decryption])
+File.write((ARGV[1]), decrypted_message_hash[:decryption])
 
-  puts "Created #{ARGV[1]} with the key #{ARGV[2]} and the date #{ARGV[3]}"
-end
+puts "Created #{ARGV[1]} with the key #{ARGV[2]} and the date #{ARGV[3]}"
