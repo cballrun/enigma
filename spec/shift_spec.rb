@@ -20,24 +20,11 @@ describe Shift do
   end
 
   it 'has an offset' do
-    
     expect(@shift.offset).to be_a(Offset)
   end
 
   it 'can make a shifts hash with the right values' do
     expect(@shift.shifts).to be_a(Hash)
-    
     expect(@shift.shifts).to eq({:A => 3, :B=> 27, :C => 73, :D => 20} )
   end
-
-
-
-
-
-
-
-
-
-
-
 end

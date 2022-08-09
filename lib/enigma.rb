@@ -1,13 +1,6 @@
 require 'date'
 
 class Enigma
-  
-
-  def initialize
-
-  end
-
-
   def encrypt(message, key = (Key.new).keygen, date = Date.today)
     use_key = Key.new(key)
     offset = Offset.new(date)
@@ -24,7 +17,7 @@ class Enigma
     encryption_hash
   end
 
-  def decrypt(message, key = nil, date = Date.today)
+  def decrypt(message, key, date = Date.today)
     use_key = Key.new(key)
     offset = Offset.new(date)
     shift = Shift.new(use_key, offset) 
@@ -39,6 +32,4 @@ class Enigma
     end
     decryption_hash
   end
-
-
 end

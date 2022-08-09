@@ -10,5 +10,4 @@ module Alphabetable
     end
     index_hash
   end
-
 end

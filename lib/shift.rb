@@ -14,6 +14,4 @@ class Shift
       D: key.d_key + offset.d_offset
     }
   end
-
-
 end
