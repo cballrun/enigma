@@ -11,11 +11,9 @@ class Offset
 
   def square
     if date.class == String
-      int_date = date.to_i
-      int_date * int_date
+      date.to_i * date.to_i
     else 
-      int_date = date_format.to_i
-      int_date * int_date
+      date_format.to_i * date_format.to_i
     end
   end
 
