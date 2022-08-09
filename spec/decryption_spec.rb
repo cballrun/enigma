@@ -58,10 +58,10 @@ describe Decryption do
   end
 
   it 'can decrypt a letter with each shift' do
-    expect(@decryption.decrypt_letter_a("k")).to eq("h")
-    expect(@decryption.decrypt_letter_b("e")).to eq("e")
-    expect(@decryption.decrypt_letter_c("d")).to eq("l")
-    expect(@decryption.decrypt_letter_d("e")).to eq("l")
+    expect(@decryption.decrypt_letter(:A, "k")).to eq("h")
+    expect(@decryption.decrypt_letter(:B, "e")).to eq("e")
+    expect(@decryption.decrypt_letter(:C, "d")).to eq("l")
+    expect(@decryption.decrypt_letter(:D, "e")).to eq("l")
   end
 
   it 'can split a message into an array of characters' do
@@ -73,7 +73,7 @@ describe Decryption do
     expect(@decryption.chars_split).to eq([["k", "e", "d", "e"], ["r", " ", "o", "h"], ["u", "l", "w"]])
   end
 
-  it 'can decrypt a message' do
+  it 'can decrypt a message containing non-indexed characters' do
     expect(@decryption.decrypt_message).to eq("hello world")
     expect(@decryption_2.decrypt_message).to eq("!hello world!")
   end
