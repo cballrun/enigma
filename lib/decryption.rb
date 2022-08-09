@@ -1,5 +1,5 @@
-require './alphabetable'
-require './splitable'
+require './lib/alphabetable'
+require './lib/splitable'
 
 class Decryption
   include Alphabetable
@@ -46,7 +46,9 @@ class Decryption
     decrypted_message = ""
     chars_split.map do|chars|
       chars.each_with_index do |char, index|
-        if index == 0
+        if !alphabet_with_index.include?(char)
+          decrypted_message << char
+        elsif index == 0
           decrypted_message << decrypt_letter_a(char)
         elsif index == 1
           decrypted_message << decrypt_letter_b(char)

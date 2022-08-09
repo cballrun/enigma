@@ -46,7 +46,7 @@ describe Enigma do
            
       encryption: "okjdvfugyrb",
       key: "02715",
-      date: "070822"
+      date: "080822"
          
     }
     )
@@ -60,7 +60,7 @@ describe Enigma do
   
        decryption: "hello world",
        key: "02715",
-       date: "070822"
+       date: "080822"
   
       })
 
