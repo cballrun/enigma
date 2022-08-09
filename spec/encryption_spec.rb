@@ -3,11 +3,11 @@ require './shift'
 
 describe Encryption do
   before :each do
-    @key = Key.new("02715")
-    @test_date = Timecop.travel(1995, 8, 4)
-    @offset = Offset.new(@test_date)
-    @shift = Shift.new(@key, @offset)
-    @encryption = Encryption.new("hello world", @shift)
+    key = Key.new("02715")
+    test_date = Timecop.travel(1995, 8, 4)
+    offset = Offset.new(test_date)
+    shift = Shift.new(key, offset)
+    @encryption = Encryption.new("hello world", shift)
   end
 
   it 'exists' do
@@ -56,20 +56,11 @@ describe Encryption do
       " " => 26})
   end
 
-  it 'can encrypt a one letter message with the a shift' do
+  it 'can encrypt a letter with each shift' do
     expect(@encryption.encrypt_letter_a("h")).to eq("k")
-  end
-  
-  it 'can encrypt a one letter message with the b shift' do
     expect(@encryption.encrypt_letter_b("e")).to eq("e")
-  end
-
-  it 'can encrypt a one letter message with the c shift' do
     expect(@encryption.encrypt_letter_c("l")).to eq("d")
-  end
-
-  it 'can encrypt a one letter message with the d shift' do
-   expect(@encryption.encrypt_letter_d("l")).to eq("e")
+    expect(@encryption.encrypt_letter_d("l")).to eq("e")
   end
 
   it 'can split a message into an array of characters' do
@@ -80,7 +71,6 @@ describe Encryption do
     expect(@encryption.chars_split).to be_a(Array)
     expect(@encryption.chars_split).to eq([["h", "e", "l", "l"], ["o", " ", "w", "o"], ["r", "l", "d"]])
   end
-
 
   it 'can encrypt a message' do
     expect(@encryption.encrypt_message).to eq("keder ohulw")
